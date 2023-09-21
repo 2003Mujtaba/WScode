@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="tablet.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" type="text/css" href="laptop.css" media="screen and (min-width: 1024px)">
+    <script src="validation.js" defer></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>Contact Me</h1>
+            <div class="navbar">
+                <div class="initials">M.H</div>
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="contact.html">Contact me</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="contact-container">
+            <form id="contactForm" action="mailto:2003mujtaba@gmail.com?subject=Contact%20Form%20Submission" method="post" enctype="text/plain">                >
+                <input type="text" id="name" name="Name" placeholder="Name" required>
+                <input type="email" id="email" name="Email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <input type="tel" id="phone" name="Cell No." placeholder="Cell No." required pattern="\d{10}">
+                <textarea id="comments" name="Comments" placeholder="Comments"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <footer class="footer-section">
+            <p>
+                Contact me at: <a href="mailto:2003mujtaba@gmail.com">2003mujtaba@gmail.com</a><br>
+                © 2023 by M.H. All rights reserved.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
