@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="tablet.css" media="screen and (min-width: 768px)">
     <link rel="stylesheet" type="text/css" href="laptop.css" media="screen and (min-width: 1024px)">
-    <script src="validation.js" defer></script>
+    <script src="validation.js" defer></script>     <!-- JavaScript for form validation, with "defer" to execute it after the HTML is parsed -->
 </head>
 <body>
     <div class="main-container">
@@ -25,8 +25,10 @@
                 </nav>
             </div>
         </div>
-        <div class="contact-container">
+        <div class="contact-container">     <!-- Container for the contact form -->
+            <!-- Form to collect user's details, sends an email on submission -->
             <form id="contactForm" action="mailto:2003mujtaba@gmail.com?subject=Contact%20Form%20Submission" method="post" enctype="text/plain">                >
+                <!-- Various input fields to capture name, email, phone, and comments -->
                 <input type="text" id="name" name="Name" placeholder="Name" required>
                 <input type="email" id="email" name="Email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 <input type="tel" id="phone" name="Cell No." placeholder="Cell No." required pattern="\d{10}">
