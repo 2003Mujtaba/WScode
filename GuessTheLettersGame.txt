@@ -1,0 +1,109 @@
+
+print("Welcome to the guess the letters game!")
+Range = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+word_4 = "hard"
+word_5 = "niche"
+Flag = True
+def main():
+    global Flag                                             # In order to make changes and redefine later on, I had to globalize it
+    while Flag:
+        userguess = input("Enter Exit or How many guesses do you want to attempt from [1-10]: ").lower()
+        if userguess == "exit" or userguess == "stop":
+            Flag = False
+            break
+        if userguess.isdigit():                                 #I use isdigit to check if his string has only numbers, if it does, I would convert it without any error. Otherwise I would prompt him again to enter a valid number
+            userguess = int(userguess)
+            if userguess in Range:
+                while Flag:
+                    userword = input("Enter Exit or Choose your word length from 4-5: ").lower()
+                    if userword == "exit" or userword == "stop":
+                        Flag = False
+                        break
+                    if userword.isdigit():
+                        userword = int(userword)
+                        if userword == 4:
+                            word4keep = []
+                            ref = ""                        #To display live word, eg: h*a* or n*i** with the for loop.
+                            count1 = 0
+                            while count1 != userguess and Flag:
+                                user_guess = input("Enter Exit or Enter a guess: ").lower()
+                                if user_guess == "exit" or user_guess == "stop":
+                                    Flag = False
+                                    break
+                                if user_guess not in word_4 and user_guess not in word4keep:             # the use of "not in" and "in" and "and" is to distinguish the print line on line 33 and 35 to execute correctly.
+                                    print("Sorry! letter entered is not present in the word!")
+                                if user_guess not in word_4 and user_guess in word4keep:
+                                    print(user_guess, " is not present in the word and has been guessed before. Please enter another letter!")
+                                word4keep.append(user_guess)                                 #I needed a save point for the user guesses, so when I iterate over the letters in the word, I can check if the user already gussed it, and if he did, I can update the display word correctly.
+                                for i in word_4:
+                                    if i in word4keep:
+                                        ref += i
+                                    else:
+                                        ref += "*"
+                                count1 += 1
+                                if count1 == userguess and ref != word_4:      #If I didn't add ref != word_4, the user would be able to guess the word on his last try and still lose.
+                                    print("No more guesses left! Game Ends!")
+                                    Flag = False                                              #Whenever I say Flag = False then break, it is to break from any nested while loop, otherwise it will break from one while loop.
+                                    break
+                                print("Word is: ", ref)
+                                if ref == word_4:
+                                    print("Congratulations, you guessed the word within your tries!")
+                                    Flag = False
+                                    break
+                                print("You remaining attempts are: ", (userguess - count1))
+                                print("Previous guesses: ", word4keep)
+                                ref = ""
+                                print("\n")
+                        elif userword == 5:
+                            word5keep = []
+                            ref2 = ""
+                            count2 = 0
+                            while count2 != userguess and Flag:                                                 #Flag is there so it allows the user to exit from any nested loop
+                                user_guess = input("Enter Exit or Enter a guess: ").lower()
+                                if user_guess == "exit" or user_guess == "stop":
+                                    Flag = False
+                                    break
+                                if user_guess not in word_5 and user_guess not in word5keep:
+                                    print("Sorry! letter entered is not present in the word!")
+                                if user_guess not in word_4 and user_guess in word5keep:
+                                    print(user_guess, "is not present in the word and has been guessed before. Please enter another letter!")
+                                word5keep.append(user_guess)
+                                for i in word_5:
+                                    if i in word5keep:
+                                        ref2 += i
+                                    else:
+                                        ref2 += "*"
+                                count2 += 1
+                                if count2 == userguess and ref2 != word_5:
+                                    print("No more guesses left! Game Ends!")
+                                    Flag = False
+                                    break
+                                print("Word is: ", ref2)
+                                if ref2 == word_5:
+                                    print("Congratulations, you guessed the word within your tries!")
+                                    Flag = False
+                                    break
+                                print("You remaining attempts are: ", (userguess - count2))
+                                print("Previous guesses: ", word5keep)
+                                ref2 = ""
+                                print("\n")
+                        else:
+                            print("Invalid, number should be 4 or 5")
+                            continue
+                    else:
+                        print("Invalid! Enter a valid number")
+                        continue
+        else:
+            print("Invalid! Please enter a valid number!")
+            continue
+main()
+while True:
+    reguess = input("Would you like to play again? (Y/N): ").upper()
+    if reguess == "Y" or reguess == "YES":
+        Flag = True                                                         # I had to redefine it to True in order for the game to run because my code is dependant on Flag being True, not False. So when Flag becomes False to Exit, I would have to redefine it to True to restart game properly.
+        main()
+    else:
+        break
+
+print("\n")
+print("Have a nice day!")
