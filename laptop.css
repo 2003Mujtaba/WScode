@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    background-color: #3d7163;
     color: #333;
     font-size: 18px; 
 }
@@ -33,7 +33,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(rgb(171, 177, 178), rgb(159, 246, 216));
+    background: linear-gradient(60deg, rgb(168, 10, 10), rgb(208, 234, 56), rgb(33, 169, 33));
     margin-top: 20px;
     padding: 0 5%; 
 }

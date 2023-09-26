@@ -1,3 +1,9 @@
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        /* additional styles for mobile view */
+    }
+}
 
 * {
     margin: 0;
@@ -7,7 +13,7 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    background-color: #3d7163;
     color: #333;
     font-size: 16px;
 }
@@ -33,7 +39,7 @@ h1 {
 .navbar {
     display: flex;
     align-items: center;
-    background: linear-gradient(rgb(171, 177, 178), rgb(159, 246, 216));
+    background: linear-gradient(60deg, red, yellow, green);
     justify-content: space-between;
     margin-top: 20px;
     padding: 2% 5%; 
@@ -45,7 +51,7 @@ h1 {
 .initials {
     font-size: 24px;
     font-weight: bold;
-    color: #666;
+    color: #110f0f;
 }
 
 nav ul {
@@ -72,7 +78,7 @@ nav a:hover {
 .about-section {
     padding: 0 5%;
     text-align: center;
-    background: linear-gradient(45deg, rgb(231, 235, 234), rgb(197, 240, 244));
+    background: linear-gradient(45deg, rgb(100, 193, 170), rgb(45, 129, 204));
     background-color: #f7f9fc;
 }
 
@@ -96,7 +102,7 @@ nav a:hover {
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
-    color: #555;
+    color: #131313;
 }
 
 .video-container {
@@ -217,9 +223,21 @@ nav a:hover {
     transition: background-color 0.3s ease;
     font-size: 18px;
 }
+#reset {
+    background-color: rgb(248, 205, 167);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+
+}
 
 .contact-container button:hover {
     background-color: #0056b3;
+}
+
+#reset:hover{
+    background-color: #f0b27b;
 }
 
 .footer-section {
