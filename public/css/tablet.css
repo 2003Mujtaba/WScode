@@ -1,0 +1,47 @@
+@media (min-width: 600px) and (max-width: 900px) {
+    .main-container {
+        max-width: 95%; 
+    }
+
+    .header {
+        padding: 2% 7%;
+    }
+
+    .navbar {
+        padding: 0 7%;
+    }
+
+    nav li {
+        margin: 0 20px; 
+    }
+
+    .about-section {
+        padding: 3% 7%;
+    }
+
+    .about-section p {
+        font-size: 18px; 
+    }
+
+    .video-container video {
+        max-width: 85%;
+    }
+
+    .projects-section {
+        justify-content: space-between;
+    }
+
+    .project-card {
+        flex-basis: 45%;
+        margin-bottom: 30px;
+    }
+
+    .contact-container {
+        max-width: 550px;
+        padding: 2% 7%; 
+    }
+
+    .footer-section {
+        padding: 2% 7%;
+    }
+}
