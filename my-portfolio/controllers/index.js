@@ -2,19 +2,24 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/home', function(req, res, next) {
-  res.render('home'); // Make sure you have a 'home.ejs' view file
+  res.render('layout', { title: 'Home', content: 'home' });
 });
 
 router.get('/about', function(req, res, next) {
-  res.render('about'); // Make sure you have an 'about.ejs' view file
+  res.render('layout', { title: 'About Me', content: 'about' });
 });
 
 router.get('/projects', function(req, res, next) {
-  res.render('projects'); // Make sure you have a 'projects.ejs' view file
+  res.render('layout', { title: 'Projects', content: 'projects' });
 });
 
 router.get('/contact', function(req, res, next) {
-  res.render('contact'); // Make sure you have a 'contact.ejs' view file
+  res.render('layout', { title: 'Contact Me', content: 'contact' });
 });
+
+router.get('/', function(req, res, next) {
+  res.redirect('/home');
+});
+
 
 module.exports = router;
