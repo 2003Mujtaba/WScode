@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const router = express.Router();
 
 router.get('/home', function(req, res, next) {
   console.log("Rendering home with title:", 'Home');
@@ -25,6 +26,5 @@ router.get('/', function(req, res, next) {
   console.log("Rendering home with title:", 'Home');
   res.redirect('/home');
 });
-
 
 module.exports = router;
