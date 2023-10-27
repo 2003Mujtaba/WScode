@@ -21,8 +21,9 @@ router.get('/', function(req, res, next) {
   res.redirect('/home');
 });
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.render('layout', { title: 'Homepage' });
 });
+
 
 module.exports = router;
