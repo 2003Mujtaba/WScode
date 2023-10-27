@@ -1,3 +1,7 @@
+const indexRouter = require('./controllers/index');  // Adjust the path if necessary
+app.use('/', indexRouter);
+
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -19,10 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Use express-ejs-layouts
 app.use(expressLayouts);  // <-- Add this line
-
-// Routers
-const indexRouter = require('./controllers/index');  // Adjust the path if necessary
-app.use('/', indexRouter);
 
 // If you have other routers, require and use them here
 
