@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const app = express();
 
 router.get('/home', function(req, res, next) {
   console.log("Rendering home with title:", 'Home');
