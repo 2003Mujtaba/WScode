@@ -1,7 +1,3 @@
-const indexRouter = require('./controllers/index');  // Adjust the path if necessary
-app.use('/', indexRouter);
-
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,6 +7,8 @@ var expressLayouts = require('express-ejs-layouts');  // <-- Add this line
 
 var app = express();
 
+const indexRouter = require('./controllers/index');  // Adjust the path if necessary
+app.use('/', indexRouter);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
