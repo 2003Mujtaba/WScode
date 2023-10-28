@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/tablet.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" type="text/css" href="/css/laptop.css" media="screen and (min-width: 1024px)">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <nav class="navbar">
+                <div class="initials">M.H</div>
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/about">About Me</a></li>
+                    <li><a href="/project">Projects</a></li>
+                    <li><a href="/contact">Contact me</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <%- body %>
+        </main>
+
+        <footer class="footer-section">
+            <p>
+                Contact me at: <a href="mailto:2003mujtaba@gmail.com">2003mujtaba@gmail.com</a><br>
+                Follow me on: 
+                <a href="https://github.com/2003Mujtaba">GitHub</a> | 
+                <a href="https://www.linkedin.com/in/mujtaba-hussaini-70a099236/">LinkedIn</a><br>
+                © 2023 by M.H. All rights reserved.
+            </p>
+        </footer>
+        
+    </div>
+</body>
+</html>
