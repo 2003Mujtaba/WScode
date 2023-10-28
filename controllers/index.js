@@ -9,8 +9,8 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About Me' });  // render 'about.ejs'
 });
 
-router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects' });  // render 'projects.ejs'
+router.get('/project', function(req, res, next) {
+  res.render('project', { title: 'Project' });  // render 'project.ejs'
 });
 
 router.get('/contact', function(req, res, next) {
