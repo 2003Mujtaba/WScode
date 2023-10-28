@@ -8,19 +8,20 @@ var expressLayouts = require('express-ejs-layouts');  // <-- Add this line
 var app = express();
 
 const indexRouter = require('./controllers/index');  // Adjust the path if necessary
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+// Use express-ejs-layouts
+app.use(expressLayouts);  // <-- Add this line
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-// Use express-ejs-layouts
-app.use(expressLayouts);  // <-- Add this line
+
 
 // If you have other routers, require and use them here
 
