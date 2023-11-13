@@ -146,5 +146,59 @@ button:hover {
     padding: 15px;
   }
 }
+/* ... existing styles ... */
+
+/* New Assignment Form Styles */
+#new-assignment-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#new-assignment-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#new-assignment-form input,
+#new-assignment-form select,
+#new-assignment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+#new-assignment-form button[type="submit"] {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #005792;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#new-assignment-form button[type="submit"]:hover {
+    background-color: #003f5c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #new-assignment-form {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+/* ... any additional styles ... */
 
   
