@@ -1,31 +1,22 @@
-<main class="home-content">
-    <section class="home-intro">
-        <p>I'm Mujtaba, a passionate web developer with a flair for creativity. Dive in to discover my journey and works.</p>
-    </section>
+<!-- views/home.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Assignment Tracker</title>
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <% include partials/header %> <!-- Include the header partial -->
 
-    <section class="photo-section">
-        <div class="photo-container">
-            <img src="/images/coding.jpg" alt="Coding">
-        </div>
-    </section>
+  <main>
+    <h1>Welcome to Assignment Tracker!</h1>
+    <p>Your centralized platform to keep track of all your assignments.</p>
+    <!-- Other content for your splash page -->
+  </main>
 
-    <section class="featured-project">
-        <figure>
-            <figcaption>
-                <h2>Guess The Letter Game</h2>
-                <p>This Python game lets players guess the letters of a hidden word. Players choose word lengths (4-5 letters) and have limited attempts. Incorrect guesses show feedback and a list of tried letters. The game handles varied inputs and allows exits anytime.</p>
-                <a href="https://github.com/2003Mujtaba/WScode" class="featured-link">View Project on GitHub</a>
-            </figcaption>
-        </figure>
-    </section>
-
-    <section class="skills-home">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML & CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Hacking</li>
-        </ul>
-    </section>
-</main>
+  <% include partials/footer %> <!-- Include the footer partial -->
+</body>
+</html>

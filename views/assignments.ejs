@@ -1,0 +1,25 @@
+<!-- views/assignments.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ... head elements ... -->
+</head>
+<body>
+  <% include partials/header %>
+
+  <main>
+    <h1>All Assignments</h1>
+    <ul>
+      <% assignments.forEach(assignment => { %>
+        <li>
+          <h2><%= assignment.title %></h2>
+          <p><%= assignment.description %></p>
+          <!-- Add other assignment details you want to display -->
+        </li>
+      <% }) %>
+    </ul>
+  </main>
+
+  <% include partials/footer %>
+</body>
+</html>
