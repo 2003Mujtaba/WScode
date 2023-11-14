@@ -1,31 +1,32 @@
-<!-- views/assignments.ejs -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome to Assignment Tracker</title>
-        <!-- Link to your CSS file -->
-        <link rel="stylesheet" href="/stylesheets/style.css">
-      </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Assignment Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- Consider including a CSS framework like Bootstrap for responsiveness and modern components -->
+</head>
 <body>
-  <%- include('partials/header') %>>
-
-  <main>
-    <h1>All Assignments</h1>
-    <ul>
-      <% assignments.forEach(assignment => { %>
-        <li>
-          <h2><%= assignment.title %></h2>
-          <p><%= assignment.description %></p>
-          <a href="/assignments/<%= assignment._id %>/edit">Edit</a>
-          <a href="/assignments/new">Create New Assignment</a>
-
-        </li>
-      <% }) %>
-    </ul>
-  </main>
-
-  <%- include('partials/footer') %>>
+    <% include('partials/header') %>
+    <main class="container">
+        <h1>All Assignments</h1>
+        <div class="assignment-container">
+            <% assignments.forEach(assignment => { %>
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title"><%= assignment.title %></h2>
+                        <p class="card-text"><%= assignment.description %></p>
+                        <div class="card-actions">
+                            <a href="/assignments/<%= assignment._id %>/edit" class="btn btn-primary">Edit</a>
+                            <a href="/assignments/new" class="btn btn-success">Create New Assignment</a>
+                            <!-- Delete button functionality can be handled with JavaScript for a better user experience -->
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+    <% include('partials/footer') %>
 </body>
 </html>
