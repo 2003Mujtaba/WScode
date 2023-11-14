@@ -18,7 +18,7 @@
         <li>
           <h2><%= assignment.title %></h2>
           <p><%= assignment.description %></p>
-          <!-- Add other assignment details you want to display -->
+          <a href="/assignments/<%= assignment._id %>/edit">Edit</a>
         </li>
       <% }) %>
     </ul>
