@@ -17,18 +17,19 @@
       <a href="/assignments/new" class="btn btn-primary mb-3">Create New Assignment</a>
     </div>
     <% assignments.forEach(assignment => { %>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title"><%= assignment.title %></h5>
-          <p class="card-text"><%= assignment.description %></p>
-          <div class="d-flex justify-content-end">
-            <a href="/assignments/<%= assignment._id %>/edit" class="btn btn-outline-secondary me-2">Edit</a>
-            <!-- Add JavaScript function to confirm deletion -->
-            <button onclick="confirmDelete('<%= assignment._id %>')" class="btn btn-outline-danger">Delete</button>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><%= assignment.title %></h5>
+            <p class="card-text"><%= assignment.description %></p>
+            <p class="card-text">Due: <%= assignment.dueDate.toDateString() %></p> <!-- Format the date to a readable string -->
+            <p class="card-text">Priority: <%= assignment.priority %></p>
+            <div class="d-flex justify-content-end">
+              <a href="/assignments/<%= assignment._id %>/edit" class="btn btn-outline-secondary me-2">Edit</a>
+              <button onclick="confirmDelete('<%= assignment._id %>')" class="btn btn-outline-danger">Delete</button>
+            </div>
           </div>
         </div>
-      </div>
-    <% }) %>
+      <% }) %>
   </main>
 
   <%- include('partials/footer') %> 
