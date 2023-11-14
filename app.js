@@ -87,13 +87,13 @@ app.put('/assignments/:id', async (req, res) => {
 // Route to handle the deletion of an assignment
 app.delete('/assignments/:id', async (req, res) => {
     try {
-      await Assignment.findByIdAndRemove(req.params.id);
+      await Assignment.findByIdAndDelete(req.params.id);
       res.redirect('/assignments');
     } catch (err) {
-      console.error(err).message;
+      console.error(err);
       res.status(500).send('Error deleting the assignment');
     }
   });
-
+  
 // Define the PORT
 const PORT = process.env.PORT || 3000;
