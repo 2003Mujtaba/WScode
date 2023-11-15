@@ -1,12 +1,8 @@
-/* stylesheets/style.css */
-
-/* Reset some basic elements */
 body, h1, p {
     margin: 0;
     padding: 0;
   }
   
-  /* Style the entire body */
   body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -14,7 +10,6 @@ body, h1, p {
     background-color: #f4f4f4;
   }
   
-  /* Header styles */
   header {
     background: #005792;
     color: #fff;
@@ -38,7 +33,6 @@ body, h1, p {
     font-weight: bold;
   }
   
-  /* Main content styles */
   main {
     padding: 2rem;
     text-align: center;
@@ -54,7 +48,6 @@ body, h1, p {
     margin-bottom: 2rem;
   }
   
-  /* Footer styles */
   footer {
     background: #333;
     color: #fff;
@@ -68,7 +61,6 @@ body, h1, p {
   footer p {
     margin: 0;
   }
-  /* General Styles */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f8f9fa;
@@ -86,7 +78,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styles */
 form {
   display: flex;
   flex-direction: column;
@@ -115,7 +106,6 @@ textarea:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-/* Buttons */
 button {
   margin-top: 20px;
   padding: 10px 15px;
@@ -139,16 +129,13 @@ button:hover {
   background-color: #c82333;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .container {
     width: 90%;
     padding: 15px;
   }
 }
-/* ... existing styles ... */
 
-/* New Assignment Form Styles */
 #new-assignment-form {
     max-width: 600px;
     margin: 20px auto;
@@ -190,8 +177,6 @@ button:hover {
 #new-assignment-form button[type="submit"]:hover {
     background-color: #003f5c;
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
     #new-assignment-form {
         width: 90%;
@@ -199,6 +184,5 @@ button:hover {
     }
 }
 
-/* ... any additional styles ... */
 
   

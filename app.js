@@ -1,34 +1,37 @@
+// Loads environment variables from .env file
 require('dotenv').config();
 const express = require('express');
+
+// Imports the mongoose module to interact with the MongoDB database
 const mongoose = require('mongoose');
+
+// Imports the method-override module to support PUT and DELETE from forms where the client doesn't support it
 const methodOverride = require('method-override');
+
 // Initialize the Express application
 const app = express();
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(methodOverride('_method'));
 
-// Set up EJS view engine if not already done
 app.set('view engine', 'ejs');
 
-// Serve static files from the 'public' directory
 app.use(express.static('public'));
 
-// Connect to MongoDB
+// Connects to MongoDB
 mongoose.connect(process.env.DB_URI)
 .then(() => {
   console.log('MongoDB connected successfully.');
 
-  // Start the server only after MongoDB connection is successful
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 })
 .catch(err => {
   console.error('MongoDB connection error:', err);
-  process.exit(1); // Optional: Exit the process if MongoDB connection fails
+  process.exit(1); // Exits the process if MongoDB connection fails
 });
 
-// Import the model
+// Imports the model
 const Assignment = require('./models/Assignment');
 
 // Define a route for the home page
@@ -56,17 +59,17 @@ app.post('/assignments', async (req, res) => {
     try {
       const newAssignment = new Assignment(req.body);
       await newAssignment.save();
-      res.redirect('/assignments'); // Redirect to the list of all assignments
+      res.redirect('/assignments'); // Redirects to the list of all assignments
     } catch (err) {
       console.error(err);
-      res.status(500).send('Error creating a new assignment');
+      res.status(500).send('Error creating a new assignment'); // Error catch
     }
   });
 // Route to display the form to edit an existing assignment
 app.get('/assignments/:id/edit', async (req, res) => {
     try {
       const assignment = await Assignment.findById(req.params.id);
-      res.render('edit-assignment', { assignment }); // Pass the assignment to the EJS file
+      res.render('edit-assignment', { assignment }); // Passes the assignment to the EJS file
     } catch (err) {
       console.error(err);
       res.status(500).send('Error loading the assignment to edit');
@@ -95,5 +98,5 @@ app.delete('/assignments/:id', async (req, res) => {
     }
   });
   
-// Define the PORT
+// PORT
 const PORT = process.env.PORT || 3000;
