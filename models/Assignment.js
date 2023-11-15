@@ -1,32 +1,31 @@
-// Import the necessary Mongoose classes
+// Imports the necessary Mongoose classes
 const { Schema, model } = require('mongoose');
 
-// Define the schema for an assignment
-// This includes the data structure and types for each field you want to store in the database.
+// Defines the schema for an assignment
 const assignmentSchema = new Schema({
   title: {
-    type: String,     // Data type for the title field
-    required: true    // Makes this field required
+    type: String,     // Data type for the title field and so forth for others below
+    required: true    // Makes this field required and so on for others below
   },
   description: {
-    type: String,     // Data type for the description field
-    required: false   // This field is not required
+    type: String,     
+    required: false   
   },
   dueDate: {
-    type: Date,       // Stores a date
-    required: true    // This field is required
+    type: Date,       
+    required: true    
   },
   priority: {
-    type: String,     // Could be 'High', 'Medium', 'Low'
+    type: String,    
     required: true,
     enum: ['High', 'Medium', 'Low'] // Enum restricts the value to one of these options
   }
 });
 
-// Create a model from the schema
-// The model is what you use to interact with the collection of documents in the database.
+// Creates model from the schema
+// interacting with the collection of documents in the database.
 const Assignment = model('Assignment', assignmentSchema);
 
-// Export the model
-// This allows you to import the model in other parts of your application.
+// Exports the model
+// imports the model in other parts of your application.
 module.exports = Assignment;
