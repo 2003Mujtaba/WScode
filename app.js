@@ -1,4 +1,4 @@
-// Loads environment variables from .env file
+// Loads environment variables from .env file with credentials
 require('dotenv').config();
 const express = require('express');
 
@@ -8,9 +8,9 @@ const mongoose = require('mongoose');
 // Imports the method-override module to support PUT and DELETE from forms where the client doesn't support it
 const methodOverride = require('method-override');
 
-// Initialize the Express application
+// Initializes the Express application
 const app = express();
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
+app.use(express.urlencoded({ extended: true })); 
 app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
